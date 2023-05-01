@@ -1,0 +1,158 @@
+body {
+    background-color: rgb(56, 54, 54);
+    font-family: Verdana;
+}
+
+form {
+    border-radius: 10px;
+    color: rgb(160, 156, 156);
+    border: 1px solid rgb(33,150,243);
+    margin: 50px auto 10px auto;
+    max-width: 600px;
+    background-color: rgb(33,37,41);
+
+    display: flex;
+    flex-direction: column;
+}
+
+ hr {
+    margin: 6px 0 20px 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 1px solid rgb(33,150,243);
+    
+}
+
+form h2 {
+    color: aliceblue;
+    margin: 20px auto;
+    text-align: center;
+
+}
+
+form .fields {
+    color: rgb(231, 220, 168);
+    display: flex;
+    flex-direction: column;
+    margin: 10px 40px;
+}
+
+form .inlblock {
+    display: flex;
+    flex-direction: row;
+}
+
+form .colblock {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px 70px 20px 70px;
+
+}
+
+form button {
+    background-color: rgb(33,150,243);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(33,150,243);
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+form .сheck {
+    margin: 0px 40px 20px 40px;
+}
+
+form button:hover {
+    background-color: rgb(57, 54, 238);
+    border: solid rgb(57, 54, 238);
+}
+form .fields input {
+    border-radius: 5px;
+    border: 1px solid rgb(173,181,189);
+    background-color: rgb(33,37,41);
+    color: aliceblue;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+form  .fields textarea {
+    resize: none;
+    height: 150px;
+    width: 100%;
+    background-color: rgb(33,37,41);
+    color: aliceblue;
+    border-radius: 5px;
+    border: 1px solid rgb(173,181,189);
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+form .birth{
+    margin-bottom: 30px;
+    color: rgb(231, 220, 168);
+
+    
+}
+form .birth input {
+    margin-top: 10px;
+    width:130px;
+    height: 30px;
+    font-size: 17px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+form .limbs {
+    color: rgb(231, 220, 168);
+}
+
+
+form .rad {
+    margin-top: 10px;
+    color: rgb(240, 244, 247);
+    font-size: 15px;
+}
+form .rad label{
+    margin-right: 5px;
+}
+
+form .gender {
+    color: rgb(231, 220, 168);
+
+    margin-bottom: 10px;
+}
+
+form .changeGen{
+    color: rgb(249, 252, 255);
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    
+}
+
+form .powers select {
+    margin-top: 10px;
+    width:200px;
+    height: 60px;
+    font-size: 14px;
+    color: rgb(0, 0, 0)
+}
+
+form .superpowers {
+    margin-top: 30px;
+    color: rgb(231, 220, 168);
+
+}
+
+form .check {
+    margin-bottom: 30px;
+    
+
+}
+

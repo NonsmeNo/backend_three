@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>backend_3</title>
+</head>
+<body>
+   
+<form action="form.php" method="POST">
+
+    <h2>Регистрация</h2>
+    <hr>
+
+    <div class="fields">
+        <div class="item">
+            <label>Имя</label><br>
+            <input type="text" name="clientName">
+        </div>
+        <div class="item">
+                <label>E-mail</label> <br>
+                <input type="text" name="clientEmail">     
+        </div>
+        <div class="item">
+            <label>Ваша биография</label> <br>
+            <textarea name="clientText"></textarea>
+        </div>
+    </div>
+
+    <div class="inlblock">
+        <div class="colblock">
+
+            <div class="gender">
+                Ваш пол: <br> 
+
+                <div class="changeGen">
+                    <label>
+                        <input type="radio" checked="checked"
+                        name="radio-group-1" value="Значение1">
+                        Женский &#9792;
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio"
+                        name="radio-group-1" value="Значение2">
+                        Мужской &#9794;
+                    </label>
+                </div>
+            </div>  
+
+            <div class="birth">
+                <label>
+                    Дата Рождения:<br>
+                    <input name="field-date"
+                    type="date"
+                    value="2023-03-23">
+                </label> 
+            </div>
+           
+
+            
+        </div>
+    
+        <div class="colblock">
+
+            <div class="limbs">
+                Количество <br> Ваших конечностей: <br> 
+                <div class="rad">
+                    <label>
+                        <input type="radio" 
+                        name="radio-group-2" value="Значение1">
+                        1
+                    </label>
+                    <label>
+                        <input type="radio" 
+                        name="radio-group-2" value="Значение2">
+                        2
+                    </label>
+                    <label>
+                        <input type="radio" 
+                        name="radio-group-2" value="Значение3">
+                        3
+                    </label>
+                    <label>
+                        <input type="radio" checked="checked" 
+                        name="radio-group-2" value="Значение4">
+                        4
+                    </label>
+                </div>
+            </div>
+
+            <div class="superpowers">   
+                <label>
+                    Ваши <br> сверхспособности:<br>
+                    <div class="powers">
+                        <select name="select[]" multiple="multiple">
+                            <option value="Значение1" selected="selected">Бессмертие</option>
+                            <option value="Значение2">Прохождение сквозь стены</option>
+                            <option value="Значение3" selected="selected">Левитация</option>
+                        </select>
+                    </div>
+                </label> 
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    <div class="сheck">
+        <input class="сheckbox" type="checkbox" id="data" name="data">
+        <label class="ms-1 " for="data">С контрактом ознакомлен(a)</label>
+    </div>
+
+    <div>
+        <button>Отправить</button>
+    </div>
+
+</form>
+
+</body>
+</html>
