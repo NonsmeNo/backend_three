@@ -5,57 +5,62 @@ header('Content-Type: text/html; charset=UTF-8'); //кодировка для б
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST')
 {
-    print('беда<br/>');
     exit();
 }
 
 // При наличии ошибок завершаем работу скрипта
 if (empty($_POST['name'])) {
-  print('Введите имя<br/>');
+  print('Введите имя &#128532;<br/>');
   exit();
 }
 
 if (empty($_POST['email'])) {
-    print('Введите E-mail<br/>');
+    print('Введите E-mail &#128554;<br/>');
     exit();
   }
   
-  if (empty($_POST['gender']))
+  if (empty($_POST['biography']))
   {
-      print('Выберите пол<br>');
+      print('Добавьте вашу биографию &#128559;<br>');
       exit();
   }
 
-  if (empty($_POST['biography']))
+  if (empty($_POST['gender']))
   {
-      print('Добавьте вашу биографию<br>');
+      print('Выберите пол &#128577;<br>');
       exit();
   }
+
   
   if (empty($_POST['limbs']))
   {
-      print('Выберите число конечностей<br>');
+      print('Выберите число конечностей &#128550;<br>');
       exit();
   }
 
   if (empty($_POST['agree']))
-{
-    print('Вы не ознакомились с контрактом<br>');
+  {
+    print('Вы не ознакомились с контрактом 	&#128576;<br>');
     exit();
-}
+  }
 
-$date1='2023-03-23';
-$date2=$_POST['date'];
- if (strtotime($date1)<= strtotime($date2))
-{
-  print('Выбрана некорректная дата<br>');
-  exit();
-}
+  if (empty($_POST['ability']))
+  {
+      print('Выберите сверхспособности &#128550;<br>');
+      exit();
+  }
+
+  $date1="2004-01-01";
+  $date=$_POST['birth'];
+
+  if ($date>=$date1)
+  {
+    print('Выбрана некорректная дата &#128559;<br>');
+    exit();
+  }
 
   // Сохранение в базу данных.
-$user = 'u52945';
-$password = '3219665'; 
-$db = new PDO('mysql:host=localhost;dbname=u52945', $user, $password,
+$db = new PDO('mysql:host=localhost;dbname=u52945', 'u52945', '3219665',
   [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 
@@ -65,18 +70,18 @@ try {
     VALUES (:name, :email, :biography, :gender, :limbs, :birth)");
     $stmt->bindParam(':name', $_POST['name']);
     $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':biography', $_POST[':biography']);
+    $stmt->bindParam(':biography', $_POST['biography']);
     $stmt->bindParam(':gender', $_POST['gender']);
     $stmt->bindParam(':limbs', $_POST['limbs']);
     $stmt->bindParam(':birth', $_POST['birth']);
     $stmt->execute();
-    $app_id = $db->lastInsertId(); //последний идентификатор
+    $application_id = $db->lastInsertId();
 
-    foreach ($_POST['ability'] as $ability) // цикл foreach() в PHP для перебора значений поля множественного выбора и вставки выбранных способностей в БД
+    foreach ($_POST['ability'] as $ability)
     {
-        $stmt = $db->prepare("INSERT INTO application_ability2 (application_id, ability_id)
+        $stmt = $db->prepare("INSERT INTO application_ability (application_id, ability_id)
         VALUES (:application_id, (SELECT id FROM ability WHERE name=:ability_name))");
-        $stmt->bindParam(':application_id', $app_id);
+        $stmt->bindParam(':application_id', $application_id);
         $stmt->bindParam(':ability_name', $ability);
         $stmt->execute();
     }

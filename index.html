@@ -8,7 +8,7 @@
 </head>
 <body>
    
-<form action="http://u52945.kubsu-dev.ru/backend_three/form.php" method="POST">
+<form action="form.php" method="POST">
 
     <h2>Регистрация</h2>
     <hr>
@@ -24,7 +24,7 @@
         </div>
         <div class="item">
             Ваша биография<br>
-            <textarea name="biography"></textarea>
+        <textarea name="biography" id="biography"></textarea>
         </div>
     </div>
 
@@ -35,12 +35,12 @@
                 Ваш пол:<br> 
                 <div class="changeGen">
                     <label>
-                        <input type="radio" name="gender" value="1">
+                        <input type="radio" name="gender" value="F">
                         Женский &#9792;
                     </label>
                     <br>
                     <label>
-                        <input type="radio" name="gender" value="2">
+                        <input type="radio" name="gender" value="M">
                         Мужской &#9794;
                     </label>
                 </div>
@@ -82,9 +82,9 @@
                     Ваши <br> сверхспособности:<br>
                     <div class="powers">
                         <select name="ability[]" multiple="multiple">
-                            <option value="immortality" selected="selected">Бессмертие</option>
+                            <option value="immortality">Бессмертие</option>
                             <option value="passingWalls">Прохождение сквозь стены</option>
-                            <option value="levitation" selected="selected">Левитация</option>
+                            <option value="levitation">Левитация</option>
                         </select>
                     </div>
                 </label> 
