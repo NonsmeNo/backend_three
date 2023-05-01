@@ -44,6 +44,13 @@ if (empty($_POST['email'])) {
     exit();
 }
 
+$date1='2023-03-23';
+$date2=$_POST['date'];
+ if (strtotime($date1)<= strtotime($date2))
+{
+  print('Выбрана некорректная дата<br>');
+  exit();
+}
 
   // Сохранение в базу данных.
 $user = 'u52945';
